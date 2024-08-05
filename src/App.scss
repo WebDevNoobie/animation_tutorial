@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: relative;
+
+  .shadowContainer {
+    width: 36vw;
+    height: 82vh;
+    background-color: grey;
+    position: absolute;
+    transform: translate(32vw, 8vh);
+  }
+
+  .container1 {
+    width: 40vw;
+    height: 80vh;
+    background-color: white;
+    position: absolute;
+    transform: translate(30vw, 10vh);
+    display: flex;
+    flex-direction: column;
+
+    .login {
+      width: 90%;
+      height: 10%;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      border-left: 2px solid crimson;
+      font-size: 30px;
+      font-weight: 900;
+      color: crimson;
+      padding-left: 7%;
+      margin-top: 50px;
+    }
+
+    .inputt {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      padding: 0 10% 0 7%;
+
+      .inputitem {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10%;
+        transition: all 0.5s ease;
+
+        &:focus-within {
+          color: crimson;
+
+          input {
+            border-bottom: 1px solid crimson;
+          }
+        }
+
+        input {
+          border: none;
+          border-bottom: 1px solid black;
+          font-size: 25px;
+        }
+      }
+    }
+
+    button {
+      width: 150px;
+      height: 70px;
+      border: 1px solid crimson;
+      color: crimson;
+      margin-left: calc(50% - 75px);
+      margin-top: 40px;
+      font-size: 20px;
+      transition: all 0.5s ease;
+
+      &:hover {
+        background-color: crimson;
+        color: white;
+      }
+    }
+
+    h3 {
+      margin-left: calc(50% - 100px);
+      margin-top: 40px;
+    }
+  }
+
+  .signupInitial {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    background-color: crimson;
+    position: absolute;
+    transform: translate(65vw, 15vh);
+    animation: to-final 4s ease-in-out 0s 1 normal both;
+
+    .plus {
+      color: aliceblue;
+      width: 2vw;
+      height: 2vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      transform: translate(4vw, 10vw);
+      animation: to-final-cross 4s ease-in-out 0s 1 normal both;
+      cursor: pointer;
+    }
+
+    .appdis {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      animation: appear 4s ease 4s 1 normal both;
+
+      .login {
+        width: 90%;
+        height: 10%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        border-left: 2px solid white;
+        font-size: 30px;
+        font-weight: 900;
+        color: white;
+        padding-left: 7%;
+        margin-top: 50px;
+      }
+
+      .inputt {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        padding: 0 10% 0 7%;
+        // animation: appear 4s ease 0s 1 normal fill-mode;
+
+        .inputitem {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 10%;
+          color: white;
+
+          input {
+            border: none;
+            border-bottom: 1px solid white;
+            background-color: crimson;
+            color: white;
+            font-size: 25px;
+          }
+        }
+      }
+
+      button {
+        width: 150px;
+        height: 70px;
+        color: crimson;
+        background-color: white;
+        margin-left: calc(50% - 75px);
+        margin-top: 20px;
+        font-size: 20px;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+
+  .signup {
+    width: 42vw;
+    height: 80vh;
+    background-color: crimson;
+    position: absolute;
+    transform: translate(29vw, 12vh);
+    animation: to-initial 4s ease-in-out 0s 1 normal both;
+
+    .plus {
+      color: aliceblue;
+      width: 2vw;
+      height: 2vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      transform: translate(4vw, 4vw);
+      animation: to-initial-cross 4s ease-in-out 0s 1 normal both;
+      cursor: pointer;
+    }
+
+    .login,
+    .inputt,
+    button {
+      display: none;
+    }
+  }
+}
+
+@keyframes to-final {
+  0% {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    transform: translate(65vw, 15vh);
+  }
+  50% {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    transform: translate(45vw, 45vh);
+  }
+  100% {
+    width: 42vw;
+    height: 80vh;
+    border-radius: 0%;
+    transform: translate(29vw, 12vh);
+  }
+}
+
+@keyframes to-initial {
+  0% {
+    width: 42vw;
+    height: 80vh;
+    border-radius: 0%;
+    transform: translate(29vw, 12vh);
+  }
+  50% {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    transform: translate(45vw, 45vh);
+  }
+  100% {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    transform: translate(65vw, 15vh);
+  }
+}
+
+@keyframes appear {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes to-final-cross {
+  0% {
+    transform: translate(4vw, 4vw);
+  }
+  50% {
+    transform: translate(4vw, 4vw);
+  }
+  100% {
+    transform: translate(37vw, 4vw);
+  }
+}
+
+@keyframes to-initial-cross {
+  0% {
+    transform: translate(37vw, 4vw);
+  }
+  50% {
+    transform: translate(4vw, 4vw);
+  }
+  100% {
+    transform: translate(4vw, 4vw);
+  }
+}
